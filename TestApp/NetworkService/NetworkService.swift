@@ -9,6 +9,8 @@ import Foundation
 
 final class NetworkService {
 
+  //MARK: - Send request
+
   func getDoors(completion: @escaping (Result<[DoorsModel], Error>) -> Void) {
     print("Calling API")
     DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
@@ -17,6 +19,8 @@ final class NetworkService {
       completion(.success(models))
     }
   }
+
+  //MARK: - Send door open verification
 
   func sendDoorOpenVerification(completion: @escaping (Result<DoorStatus, NSError>) -> Void) {
     print("Send request verification")
@@ -28,10 +32,10 @@ final class NetworkService {
         let status = DoorStatus.lockedStatus
         completion(.success(status))
       }
-
     }
-
   }
+
+  //MARK: - Prepare Verification
 
   private func prepareVerificationResult(completion: @escaping (Result<DoorStatus, NSError>) -> Void) {
     let status = DoorStatus.unlockedStatus
@@ -40,8 +44,10 @@ final class NetworkService {
       return completion(.failure(NSError(domain: "", code: 0)))
     }
     print("Status updated")
-         completion(.success(status))
+    completion(.success(status))
   }
+
+  //MARK: - Prepare Models
 
   private func prepareModels() -> [DoorsModel] {
     let models = [
@@ -54,5 +60,4 @@ final class NetworkService {
     ]
     return models
   }
-
 }

@@ -9,6 +9,8 @@ import UIKit
 
 final class CompanyNameView: UIView {
 
+  //MARK: - Init
+
   override init(frame: CGRect) {
     super.init(frame: .zero)
     initialize()
@@ -18,12 +20,13 @@ final class CompanyNameView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
+  //MARK: - Properties
+
   private let companyNameLabel: UILabel = {
     let label = UILabel()
     label.text = TextConstants.companyName
     label.textColor = Colors.companyName
     label.font = UIFont(name: "Sk-Modernist-Bold", size: 18.0)
-    
     return label
   }()
 
@@ -33,6 +36,7 @@ final class CompanyNameView: UIView {
     return image
   }()
 
+  //MARK: - Constraints
 
   private func initialize() {
     addSubview(companyNameLabel)
