@@ -1,0 +1,20 @@
+PODS:
+  - MaterialActivityIndicator (0.0.6)
+  - SnapKit (5.6.0)
+
+DEPENDENCIES:
+  - MaterialActivityIndicator
+  - SnapKit (~> 5.6.0)
+
+SPEC REPOS:
+  trunk:
+    - MaterialActivityIndicator
+    - SnapKit
+
+SPEC CHECKSUMS:
+  MaterialActivityIndicator: 5061a52fadf7d22533734f2d34806311331bc424
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+
+PODFILE CHECKSUM: 53690ef9614c6b3a933ab27c4dd79e740f7589dc
+
+COCOAPODS: 1.11.3
